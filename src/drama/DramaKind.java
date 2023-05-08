@@ -8,5 +8,4 @@ public enum DramaKind {
 	ActionDrama,
 	CrimeDrama,
 	MedicalDrama,
-	ShortDrama
 }
