@@ -1,23 +1,32 @@
 package drama;
-
 import java.util.Scanner;
 
 public class DramaSchedule {
-
+	
 	protected DramaKind kind = DramaKind.RomansDrama;
 	protected String dramaname;
 	protected String dramachannel;
 	protected int runningtime;
 	protected int episodes;
-	   
+	
 	public DramaSchedule() {
 	}
    
+	
 	public DramaSchedule(String dramaname, String dramachannel) {
 		this.dramaname = dramaname;
 		this.dramachannel = dramachannel;
 	}
    
+
+	public DramaSchedule(DramaKind kind, String dramaname, String dramachannel, int runningtime, int episodes) {
+		this.kind = kind;
+		this.dramaname = dramaname;
+		this.dramachannel = dramachannel;
+		this.runningtime = runningtime;
+		this.episodes = episodes;
+	}
+	
 
 	public DramaSchedule(String dramaname, String dramachannel, int runningtime, int episodes) {
 		this.dramaname = dramaname;
@@ -26,6 +35,7 @@ public class DramaSchedule {
 		this.episodes = episodes;
 	}
 	
+
 	public DramaKind getKind() {
 		return kind;
 	}
@@ -50,10 +60,12 @@ public class DramaSchedule {
 		this.dramachannel = dramachannel;
 	}
 
+	
 	public int getRunningtime() {
 		return runningtime;
 	}
 
+	
 	public void setRunningtime(int runingtime) {
 		this.runningtime = runingtime;
 	}
@@ -67,8 +79,35 @@ public class DramaSchedule {
 	}
 
    
+	String skind = "none";
 	public void printInfo() {
-		System.out.println("dramaname: " + dramaname + ", " + "channel: " + dramachannel + ", " + "runningtime: " + runningtime + ", " + "episodes: " + episodes);
+		switch(this.kind) {
+		case RomansDrama:
+			skind = "Romans";
+			break;
+		case HistoricalDrama:
+			skind = "Historical";
+			break;
+		case FantasyDrama:
+			skind = "Fantasy";
+			break;
+		case ThrillerDrama:
+			skind = "Thriller";
+			break;
+		case ActionDrama:
+			skind = "Action";
+			break;
+		case CrimeDrama:
+			skind = "Crime";
+			break;
+		case MedicalDrama:
+			skind = "Medical";
+			break;
+		case ShortDrama:
+			skind = "short";
+		default:	
+		}
+		System.out.println("kind: "+ skind + "dramaname: " + dramaname + ", " + "channel: " + dramachannel + ", " + "runningtime: " + runningtime + ", " + "episodes: " + episodes);
 	}
 	
 	public void getUserInput( Scanner input) {

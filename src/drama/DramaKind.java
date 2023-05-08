@@ -7,5 +7,6 @@ public enum DramaKind {
 	ThrillerDrama,
 	ActionDrama,
 	CrimeDrama,
-	MedicalDrama
+	MedicalDrama,
+	ShortDrama
 }
