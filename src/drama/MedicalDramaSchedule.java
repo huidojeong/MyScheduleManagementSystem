@@ -2,7 +2,7 @@ package drama;
 
 import java.util.Scanner;
 
-public class MedicalDramaSchedule extends DramaSchedule {
+public class MedicalDramaSchedule extends DramaSchedule implements DramaScheduleInput{
 
 	protected int prevRunningtime;
 	protected int prevEpisodes;
