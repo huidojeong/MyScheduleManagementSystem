@@ -3,7 +3,7 @@ package drama;
 import java.util.Scanner;
 
 public abstract class DramaSchedule {
-
+	
    protected DramaKind kind = DramaKind.RomansDrama;
    protected String dramaname;
    protected String dramachannel;

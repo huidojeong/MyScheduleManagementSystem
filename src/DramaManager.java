@@ -121,9 +121,7 @@ public class DramaManager {
          }
       }
    }
-
-         
-   
+ 
    public void viewDramaSchedule() {
 //      System.out.print("drama name:");
 //     String dramaname1 = input.next();

@@ -17,5 +17,4 @@ public interface DramaScheduleInput {
 	public void getUserInput( Scanner input);
 	
 	public void printInfo();
-
 }

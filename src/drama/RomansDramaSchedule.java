@@ -25,6 +25,7 @@ public class RomansDramaSchedule extends DramaSchedule implements DramaScheduleI
 	         int episodes = input.nextInt();
 	         this.setEpisodes(episodes);
 	   }
+	
 	   public void printInfo() {
 		      String skind = "none";
 		      switch(this.kind) {

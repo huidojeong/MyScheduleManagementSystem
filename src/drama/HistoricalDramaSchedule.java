@@ -39,6 +39,7 @@ public class HistoricalDramaSchedule extends DramaSchedule implements DramaSched
       int episodes = input.nextInt();
       this.setEpisodes(episodes);
    }
+   
    public void printInfo() {
 	      String skind = "none";
 	      switch(this.kind) {

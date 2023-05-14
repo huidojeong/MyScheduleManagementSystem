@@ -6,8 +6,7 @@ public class MenuManager {
       Scanner input = new Scanner(System.in); 
       DramaManager dramaManager = new DramaManager(input);
       
-      int num = -1;
-      
+      int num = -1;      
       
       while(num != 5) {
          System.out.println("**** Drama Schedule Management System Menu ****");
