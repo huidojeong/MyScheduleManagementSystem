@@ -2,26 +2,27 @@ package drama;
 
 import java.util.Scanner;
 
-public abstract class DramaSchedule {
-	
+import exception.ChannelFormatException;
+
+public abstract class DramaSchedule implements DramaScheduleInput {
+
    protected DramaKind kind = DramaKind.RomansDrama;
    protected String dramaname;
    protected String dramachannel;
    protected int runningtime;
    protected int episodes;
-      
+
    public DramaSchedule() {
    }
-   
+
    public DramaSchedule(DramaKind kind) {
       this.kind = kind;
    }
-   
+
    public DramaSchedule(String dramaname, String dramachannel) {
       this.dramaname = dramaname;
       this.dramachannel = dramachannel;
    }
-   
 
    public DramaSchedule(String dramaname, String dramachannel, int runningtime, int episodes) {
       this.dramaname = dramaname;
@@ -31,14 +32,13 @@ public abstract class DramaSchedule {
    }
 
    public DramaSchedule(DramaKind kind, String dramaname, String dramachannel, int runningtime, int episodes) {
-     this.kind = kind;
-     this.dramaname = dramaname;
-     this.dramachannel = dramachannel;
-     this.runningtime = runningtime;
-     this.episodes = episodes;
-     }
+      this.kind = kind;
+      this.dramaname = dramaname;
+      this.dramachannel = dramachannel;
+      this.runningtime = runningtime;
+      this.episodes = episodes;
+   }
 
-   
    public DramaKind getKind() {
       return kind;
    }
@@ -59,7 +59,11 @@ public abstract class DramaSchedule {
       return dramachannel;
    }
 
-   public void setDramachannel(String dramachannel) {
+   public void setDramachannel(String dramachannel) throws ChannelFormatException {
+      if (!dramachannel.contains("S") || !dramachannel.equals("")) {
+         throw new ChannelFormatException();
+      }
+      
       this.dramachannel = dramachannel;
    }
 
@@ -79,7 +83,66 @@ public abstract class DramaSchedule {
       this.episodes = episodes;
    }
 
-   
    public abstract void printInfo();
 
+   public void setDramaName(Scanner input) {
+      System.out.print("dramaname: ");
+      String dramaname1 = input.next();
+      this.setDramaname(dramaname1);
+   }
+
+   public void setDramaChannel(Scanner input) {
+      String dramachannel = "";
+      while(dramachannel.contains("S"))
+      
+      System.out.print("dramachannel: ");
+      dramachannel = input.next();
+      try {
+         this.setDramachannel(dramachannel);
+      } catch (ChannelFormatException e) {
+         System.out.println("Incorrect broadcaster Format. put the channel that contains S.");
+         e.printStackTrace();
+      }
+   }
+
+   public void setDramaRunningtime(Scanner input) {
+      System.out.print("runningtime: ");
+      int runningtime = input.nextInt();
+      this.setRunningtime(runningtime);
+   }
+
+   public void setDramaEpisodes(Scanner input) {
+      System.out.print("episodes: ");
+      int episodes = input.nextInt();
+      this.setEpisodes(episodes);
+   }
+
+   public String getKindString() {
+      String skind = "none";
+      switch (this.kind) {
+      case RomansDrama:
+         skind = "Romans";
+         break;
+      case HistoricalDrama:
+         skind = "Historical";
+         break;
+      case FantasyDrama:
+         skind = "Fantasy";
+         break;
+      case ThrillerDrama:
+         skind = "Thriller";
+         break;
+      case ActionDrama:
+         skind = "Action";
+         break;
+      case CrimeDrama:
+         skind = "Crime";
+         break;
+      case MedicalDrama:
+         skind = "Medical";
+         break;
+      default:
+      }
+      return skind;
+   }
 }
