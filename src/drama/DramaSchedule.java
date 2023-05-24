@@ -1,16 +1,21 @@
 package drama;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 import exception.ChannelFormatException;
 
-public abstract class DramaSchedule implements DramaScheduleInput {
+public abstract class DramaSchedule implements DramaScheduleInput, Serializable {
 
-   protected DramaKind kind = DramaKind.RomansDrama;
-   protected String dramaname;
-   protected String dramachannel;
-   protected int runningtime;
-   protected int episodes;
+   /**
+    * 
+    */
+	private static final long serialVersionUID = -7682563488841374215L;
+	protected DramaKind kind = DramaKind.RomansDrama;
+	protected String dramaname;
+	protected String dramachannel;
+	protected int runningtime;
+	protected int episodes;
 
    public DramaSchedule() {
    }

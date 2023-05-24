@@ -20,5 +20,4 @@ public class RomansDramaSchedule extends AllDrama {
       System.out.println("kind:" + skind + ", dramaname: " + dramaname + ", channel: " + dramachannel
             + ", runningtime: " + runningtime + ", episodes: " + episodes);
    }
-
 }

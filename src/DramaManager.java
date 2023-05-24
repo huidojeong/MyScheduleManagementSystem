@@ -1,19 +1,22 @@
-import java.security.PublicKey;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import drama.DramaKind;
-import drama.DramaSchedule;
 import drama.DramaScheduleInput;
 import drama.HistoricalDramaSchedule;
 import drama.MedicalDramaSchedule;
 import drama.RomansDramaSchedule;
 
-public class DramaManager {
+public class DramaManager implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5028330315881425156L;
+	
 	ArrayList<DramaScheduleInput> dramaSchedules = new ArrayList<DramaScheduleInput>();
-	Scanner input;
-
+	transient Scanner input;
 	DramaManager(Scanner input) {
 		this.input = input;
 	}

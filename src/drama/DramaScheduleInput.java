@@ -27,5 +27,4 @@ public interface DramaScheduleInput {
    public void setDramaRunningtime(Scanner input);
 
    public void setDramaEpisodes(Scanner input);
-
 }
