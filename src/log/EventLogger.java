@@ -1,5 +1,4 @@
 package log;
-
 import java.io.IOException;
 import java.util.logging.FileHandler;
 import java.util.logging.LogManager;
@@ -29,5 +28,4 @@ public class EventLogger {
 	public void log(String logMessage) {
 		logger.info(logMessage);
 	}
-
 }
